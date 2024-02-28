@@ -20,6 +20,8 @@
         return $response;
     });
 
+
+
     $app->get('/alunni', function (Request $request, Response $response, $args) {
         
         $classe = new Classe();
@@ -27,6 +29,7 @@
         $response->getBody()->write($classe -> toString());
         return $response;
     });
+
 
 
     $app->get('/alunni/{nome}', function (Request $request, Response $response, $args) {

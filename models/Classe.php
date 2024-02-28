@@ -5,7 +5,7 @@
 
         private $array;
 
-        public function _construct() {
+        public function __construct() {
 
         $A1 = new Alunno();
         $A2 = new Alunno();
@@ -26,13 +26,11 @@
         $A3 -> set_cognome("Cosma");
         $A3 -> set_eta("18");
 
-        var_dump($this->array);exit;
-
         }
 
         function search($nome){
             for($i = 0; $i < count($this->array ); $i++) {
-                if($this->array[$i] == $nome)
+                if($this->array[$i]->get_nome()== $nome)
                     return $this->array[$i];    
             }
             return null;
