@@ -38,9 +38,9 @@
         public function jsonSerialize(){
 
             $a = [
-                "Nome: " => $this->nome,
-                " Cognome: " => $this->cognome,
-                " Età: " => $this->eta
+                "nome" => $this->nome,
+                "cognome" => $this->cognome,
+                "eta" => $this->eta
             ];
             return $a;
 

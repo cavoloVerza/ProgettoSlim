@@ -41,6 +41,23 @@
             return null;
         }
 
+        public function delete($nome) {
+
+            for($i = 0; $i < count($this->array ); $i++) {
+
+                if($this->array[$i]->get_nome()== $nome)
+                    break;   
+
+            }
+
+            if($i<count($this->array ))
+            {
+                unset($this->array[$i]);
+                $this->array = array_values($this->array);
+            }    
+
+        }
+
         public function toString() {
 
             $string = "";
@@ -55,8 +72,8 @@
         public function jsonSerialize(){
 
             $a = [
-                "Nome: " => $this->nome,
-                " Alunni: " => $this->alunni
+                "Nome" => $this->nome,
+                "Alunni" => $this->array
             ];
             return $a;
         }
